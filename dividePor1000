@@ -1,0 +1,37 @@
+Sub divide1000()
+
+'
+
+' divide1000 Macro
+
+'
+
+' Atalho do teclado: Ctrl+ç
+
+'
+
+ 
+
+    Dim celula As Range
+
+ 
+
+    For Each celula In Selection
+
+        If celula.HasFormula Then
+
+            celula.Formula = "=(" & Mid(celula.Formula, 2) & ")/1000"
+
+        ElseIf IsNumeric(celula.Value) And celula.Value <> "" Then
+
+            celula.Value = celula.Value / 1000
+
+        End If
+
+    Next celula
+
+ 
+
+End Sub
+
+ 
